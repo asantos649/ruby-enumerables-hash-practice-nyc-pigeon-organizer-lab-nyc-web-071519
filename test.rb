@@ -36,7 +36,7 @@ def reorganize (data, symbol)
       if new_hash[value3[counter]][symbol]
         new_hash[value3[counter]][symbol].push(key3)
       else
-        new_hash[value3[counter]] = {sym => [key3]}
+        new_hash[value3[counter]] = {symbol => [key3]}
       end 
       counter += 1 
     end 
