@@ -17,6 +17,34 @@ pigeon_data = {
   }
 }
 
+def reorganize (data, symbol)
+  data[symbol].each {|key3, value3|
+    counter = 0 
+    while value3[counter] do 
+      if new_hash[value3[counter]][symbol]
+        new_hash[value3[counter]][symbol].push(key3)
+      else
+        new_hash[value3[counter]] = {symbol => [key3]}
+      end 
+      counter += 1 
+    end 
+        }
+        
+    data[].each {|key3, value3|
+    counter = 0 
+    while value3[counter] do 
+      if new_hash[value3[counter]][symbol]
+        new_hash[value3[counter]][symbol].push(key3)
+      else
+        new_hash[value3[counter]] = {sym => [key3]}
+      end 
+      counter += 1 
+    end 
+        }
+end 
+
+
+
 def nyc_pigeon_organizer(data)
   new_hash = {}
   data.each {|key,value|
@@ -37,6 +65,19 @@ def nyc_pigeon_organizer(data)
       counter += 1 
     end 
         }
+        
+    data[].each {|key3, value3|
+    counter = 0 
+    while value3[counter] do 
+      if new_hash[value3[counter]][:color]
+        new_hash[value3[counter]][:color].push(key3)
+      else
+        new_hash[value3[counter]] = {:color => [key3]}
+      end 
+      counter += 1 
+    end 
+        }
+        
     return new_hash
 end
 
