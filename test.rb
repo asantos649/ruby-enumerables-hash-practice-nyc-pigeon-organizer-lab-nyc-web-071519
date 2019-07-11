@@ -54,31 +54,8 @@ def nyc_pigeon_organizer(data)
       }
     }
   }
-  data[:color].each {|key3, value3|
-    counter = 0 
-    while value3[counter] do 
-      if new_hash[value3[counter]][:color]
-        new_hash[value3[counter]][:color].push(key3)
-      else
-        new_hash[value3[counter]] = {:color => [key3]}
-      end 
-      counter += 1 
-    end 
-        }
-        
-    data[].each {|key3, value3|
-    counter = 0 
-    while value3[counter] do 
-      if new_hash[value3[counter]][:color]
-        new_hash[value3[counter]][:color].push(key3)
-      else
-        new_hash[value3[counter]] = {:color => [key3]}
-      end 
-      counter += 1 
-    end 
-        }
-        
-    return new_hash
+  reorganize(data,:color) 
+  return new_hash
 end
 
 puts nyc_pigeon_organizer(pigeon_data)
